@@ -1,0 +1,224 @@
+/* VARIABLES DE COLOR Sirven para cambiar colores facil */
+:root {
+    --color-fondo: #f6f6f7;  /* Color de fondo */
+    --color-texto: #222;      /* Color del texto */
+    --color-header: #d60000;  /* Color del header */
+    --color-destacado: #ffcc00; /* Color para destacado */
+}
+
+/* quitamos margenes */
+body {
+    margin: 0;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+/* titulares */
+h1,h2,h3 {
+    font-family: "Merriweather", Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+}
+
+/*header fijo*/
+.encabezado {
+    background: var(--color-header);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* CONTENEDOR PRINCIPAL DEL NAV DEL MENUBXO */
+.menuBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* titulo */
+.logoTexto {
+    font-size: 1.9rem;   /* grande */
+    font-weight: bold;   /* grueso */
+    color: var(--color-texto);
+}
+
+/* cangreburger */
+.btnMenu {
+    display: none;               /* Se oculta en PC */
+    background: none;            /* Sin fondo */
+    border: none;                /* Sin borde */
+    font-size: 2rem;             /* Grande para que se vea */
+    color: var(--color-texto);
+    cursor: pointer;             /* Cambia cursor */
+}
+
+/* LISAT DEL MENU */
+.listaMenu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+/* Enlaces q hay en el menu */
+.listaMenu a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #ec0a0a;
+}
+
+/* Efecto hoverxd */
+.listaMenu a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/*En movil */
+@media (max-width: 900px) {
+
+    /* Mostrar boton cangreburguer */
+    .btnMenu {
+        display: block;
+    }
+
+    /* Menu se vuelve vertical */
+    .listaMenu {
+        position: absolute;
+        top: 72px;               /* Debajo del header */
+        left: 0;
+        width: 100%;             /* Ocupa todo el ancho */
+        background: var(--color-fondo);
+        flex-direction: column;  /* Ahora en columna */
+        padding: 10px 0;
+        border-top: 2px solid var(--color-borde);
+        display: none;           /* Oculto por defecto */
+        text-align: center;
+    }
+
+    /* Clase que se activa desde JS para mostrar el menu */
+    .listaMenu.show {
+        display: flex;
+    }
+
+    /* Cada boton ocupa todo el ancho en movil */
+    .listaMenu li {
+        width: 100%;
+        padding: 8px 0;
+    }
+}
+
+.barraViva {
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.zonaContenido {
+    display: flex;
+    margin: 20px;
+}
+
+.contenedorNoticias {
+    flex: 3;
+    margin-right: 20px;
+}
+
+.destacadaCard {
+    background: var(--color-destacado);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.destacadaImg {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.destacadaContenido {
+    padding: 15px;
+}
+
+.gridSecundarias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.cardMini {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.miniImg {
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+}
+
+.listaNoticias {
+    margin-top: 20px;
+}
+
+.cardNoticia {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.imgNoticia {
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+}
+
+.columnaDerecha {
+    flex: 1;
+}
+
+.tarjetaVivo, .tarjetaMasLeidas, .tarjetaTemas, .tarjetaNewsletter {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.temasBox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tema {
+    background: var(--color-header);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tema:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.pie {
+    background: var(--color-header);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footerCol {
+    margin: 10px 0;
+}

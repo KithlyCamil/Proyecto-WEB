@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- responsive -->
+    <title>Noticiando la Noticia</title> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="encabezado"> <!-- cabecera con -->
+    <div class="barraViva">🔴 En vivo</div> <!-- indicador en vivo -->
+    <nav class="menuBox">
+        <div class="logoTexto">Noticiando la Noticia</div>
+        <button class="btnMenu" id="btnMenu">☰</button>
+        <ul class="listaMenu" id="listaMenu">
+            <li><a href="#" class="menuActivo">Inicio</a></li>
+            <li><a href="#">Internacional</a></li>
+            <li><a href="#">Economía</a></li>
+            <li><a href="#">Tecnología</a></li>
+            <li><a href="#">Deportes</a></li>
+            <li><a href="#">Cultura</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="zonaContenido">
+    <section class="contenedorNoticias" id="contenedor-noticias">
+        <article class="destacadaCard">
+            <a href="#" style="color: inherit; text-decoration: none;">
+                <div class="destacadaImg" style="background-image: url('https://placehold.co/800x400?text=Noticia+Destacada');"></div>
+                <div class="destacadaContenido">
+                    <span class="badgeDest">Destacado</span>
+                    <h2>Titulo de la noticia Importante xd</h2>
+                    <p>Resumen breve de la noticia</p>
+                </div>
+            </a>
+        </article>
+
+        <div class="gridSecundarias">
+            <article class="cardMini">
+                <a href="#" style="color: inherit; text-decoration: none;">
+                    <div class="miniImg" style="background-image: url('https://placehold.co/400x200?text=Noticia+1');"></div>
+                    <div class="miniBody">
+                        <h3>Tutulo de Noticia 1</h3>
+                    </div>
+                </a>
+            </article>
+            <article class="cardMini">
+                <a href="#" style="color: inherit; text-decoration: none;">
+                    <div class="miniImg" style="background-image: url('https://placehold.co/400x200?text=Noticia+2');"></div>
+                    <div class="miniBody">
+                        <h3>Titulo de Noticia 2</h3>
+                    </div>
+                </a>
+            </article>
+            <article class="cardMini">
+                <a href="#" style="color: inherit; text-decoration: none;">
+                    <div class="miniImg" style="background-image: url('https://placehold.co/400x200?text=Noticia+3');"></div>
+                    <div class="miniBody">
+                        <h3>Titulo de Noticia 3</h3>
+                    </div>
+                </a>
+            </article>
+        </div>
+
+        <h3>Ultimas Noticias</h3>
+        <div class="listaNoticias">
+            <article class="cardNoticia">
+                <a href="#" style="color: inherit; text-decoration: none;">
+                    <div class="imgNoticia" style="background-image: url('https://placehold.co/200x100?text=Noticia+4');"></div>
+                    <div class="info">
+                        <h4>Titulo de Noticia 4</h4>
+                        <p>Resumen breve de la noticia 4</p>
+                    </div>
+                </a>
+            </article>
+            <article class="cardNoticia">
+                <a href="#" style="color: inherit; text-decoration: none;">
+                    <div class="imgNoticia" style="background-image: url('https://placehold.co/200x100?text=Noticia+5');"></div>
+                    <div class="info">
+                        <h4>Titulo de Noticia 5</h4>
+                        <p>Resumen breve de la noticia 5</p>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <aside class="columnaDerecha">
+        <div class="tarjetaVivo">
+            <h3>Actualizaciones en Vivo</h3>
+            <p id="textoActualizacion">Ultima comprobacion:</p>
+            <span id="horaActualizacion">--:--:--</span>
+        </div>
+
+        <div class="tarjetaMasLeidas">
+            <h3>Noticias mas leidas</h3>
+            <ul>
+                <li>Los efectos del cambio climatico en LATAM</li>
+                <li>La nueva tendencia de autos eléctricos en 2025</li>
+                <li>¿Por qué sube el precio del petróleo?</li>
+                <li>La IA y el trabajo: ¿qué nos espera?</li>
+                <li>Ayuda, este proyecto me dio depresion</li>
+            </ul>
+        </div>
+
+        <div class="tarjetaTemas">
+            <h3>Temas MUY Populares</h3>
+            <div class="temasBox">
+                <button class="tema">#Internacional</button>
+                <button class="tema">#Economía</button>
+                <button class="tema">#Tecnología</button>
+                <button class="tema">#Deportes</button>
+                <button class="tema">#Cultura</button>
+            </div>
+        </div>
+
+        <div class="tarjetaNewsletter">
+            <h3>Te notificamos</h3>
+            <p>Recibe las noticias más importantes cada día</p>
+            <input id="emailNews" type="email" placeholder="tucorreoxd@email.com">
+            <button id="btnSuscribir">Suscribirme Gratis</button>
+            <small>Sin spam — Cancela cuando quieras</small>
+        </div>
+    </aside>
+</main>
+
+<footer class="pie">
+    <div class="footerCol">
+        <h4>Noticiando la Noticia</h4>
+        <p>Portal de noticias confiable con información al instante.</p>
+    </div>
+    <div class="footerCol">
+        <h4>Secciones</h4>
+        <p>Internacional · Economía · Tecnología · Deportes · Cultura</p>
+    </div>
+    <div class="footerCol">
+        <h4>Legal</h4>
+        <p>Términos y Condiciones · Política de Privacidad · Política de Cookies</p>
+    </div>
+    <div class="footerCol">
+        <h4>Contacto</h4>
+        <p>Email: cussisuxohugocamilo@gmail.com</p>
+        <p>Teléfono: +591 78923825</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
