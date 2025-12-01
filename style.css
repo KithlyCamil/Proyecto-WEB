@@ -191,7 +191,7 @@ h1,h2,h3 {
 }
 
 .destacadaImg {
-    height: 420px; /* mas grande como antes */
+    height: 420px; 
     background-size: cover;
     background-position: center;
 }
