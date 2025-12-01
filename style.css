@@ -85,7 +85,7 @@ h1,h2,h3 {
         display: block;
     }
 
-    /* Menu se vuelve vertical */
+    /* Menu q se vuelve vertical */
     .listaMenu {
         position: absolute;
         top: 72px;               /* Debajo del header */
@@ -99,7 +99,7 @@ h1,h2,h3 {
         text-align: center;
     }
 
-    /* Clase que se activa desde JS para mostrar el menu */
+    /* Clase, se activa desde js para mostrar el menu */
     .listaMenu.show {
         display: flex;
     }
@@ -117,14 +117,72 @@ h1,h2,h3 {
     padding: 5px;
 }
 
+/* La noticia destacada ocupa todo el ancho del viewport (full‑bleed) arriba
+   Anajo, el contenido principal (mini noticias + lista) queda a la izquierda y el aside a la derecha */
 .zonaContenido {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+    "dest dest"
+    "main aside";
+    gap: 20px;
     margin: 20px;
+    align-items: start;
 }
 
+/* Ajuste: destacada full‑width; las mini noticias (sec), título y lista quedan en la columna izquierda
+   y el aside se alinea a la altura de las mini noticias (sec). */
+.zonaContenido {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+        "dest  dest"
+        "sec   aside"
+        "title aside"
+        "list  aside";
+    gap: 20px;
+    margin: 20px;
+    align-items: start;
+}
+
+/* permitir que los elementos dentro de .contenedorNoticias participen en el grid padre */
 .contenedorNoticias {
-    flex: 3;
-    margin-right: 20px;
+    display: contents;
+}
+
+/* asignar áreas */
+.destacadaCard { grid-area: dest; }
+.zonaContenido .gridSecundarias { grid-area: sec; }
+.zonaContenido > h3 { grid-area: title; margin: 0; align-self: center; padding-top: 6px; }
+.zonaContenido .listaNoticias { grid-area: list; }
+
+/* contenedor principal de noticias (izquierda) */
+.contenedorNoticias {
+    grid-area: main;
+}
+
+/* aside a la derecha, justo debajo de la destacada (en la segunda fila) */
+.columnaDerecha {
+    grid-area: aside;
+}
+
+/* Responsive: apilar en móvil */
+@media (max-width: 1000px) {
+    .zonaContenido {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "dest"
+        "main"
+        "aside";
+    }
+    .destacadaCard {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 8px;
+    }
 }
 
 .destacadaCard {
@@ -135,7 +193,7 @@ h1,h2,h3 {
 }
 
 .destacadaImg {
-    height: 200px;
+    height: 420px; /* más grande como antes */
     background-size: cover;
     background-position: center;
 }
@@ -148,6 +206,7 @@ h1,h2,h3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
+    margin-top: 18px;
 }
 
 .cardMini {
@@ -164,7 +223,7 @@ h1,h2,h3 {
 }
 
 .listaNoticias {
-    margin-top: 20px;
+    margin-top: 22px;
 }
 
 .cardNoticia {
@@ -179,10 +238,6 @@ h1,h2,h3 {
     height: 100px;
     background-size: cover;
     background-position: center;
-}
-
-.columnaDerecha {
-    flex: 1;
 }
 
 .tarjetaVivo, .tarjetaMasLeidas, .tarjetaTemas, .tarjetaNewsletter {
