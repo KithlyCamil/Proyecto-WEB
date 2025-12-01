@@ -131,8 +131,6 @@ h1,h2,h3 {
     align-items: start;
 }
 
-/* Ajuste: destacada full‑width; las mini noticias (sec), título y lista quedan en la columna izquierda
-   y el aside se alinea a la altura de las mini noticias (sec). */
 .zonaContenido {
     display: grid;
     grid-template-columns: 1fr 340px;
@@ -147,12 +145,12 @@ h1,h2,h3 {
     align-items: start;
 }
 
-/* permitir que los elementos dentro de .contenedorNoticias participen en el grid padre */
+/* permite que los elementos dentro de .contenedorNoticias participen en el grid padre */
 .contenedorNoticias {
     display: contents;
 }
 
-/* asignar áreas */
+/* asignar areas */
 .destacadaCard { grid-area: dest; }
 .zonaContenido .gridSecundarias { grid-area: sec; }
 .zonaContenido > h3 { grid-area: title; margin: 0; align-self: center; padding-top: 6px; }
@@ -168,7 +166,7 @@ h1,h2,h3 {
     grid-area: aside;
 }
 
-/* Responsive: apilar en móvil */
+/* Responsive */
 @media (max-width: 1000px) {
     .zonaContenido {
         grid-template-columns: 1fr;
@@ -193,7 +191,7 @@ h1,h2,h3 {
 }
 
 .destacadaImg {
-    height: 420px; /* más grande como antes */
+    height: 420px; /* mas grande como antes */
     background-size: cover;
     background-position: center;
 }
