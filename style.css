@@ -522,3 +522,19 @@ h1,h2,h3 {
         font-size: var(--fs-xs);
     }
 }
+
+/* =========================
+   Centrado real de noticias en paginas > 1
+   ========================= */
+.listaNoticias.centrada {
+    grid-column: 1 / -1;        /* ocupa todo el ancho del grid para que pueda centrarse */
+    display: flex;
+    flex-direction: column;
+    align-items: center;        /* centramos horizontalmente */
+    justify-content: flex-start;
+}
+
+.listaNoticias.centrada .cardNoticia {
+    max-width: 800px;           /* ancho máximo para que no se estiren demasiado */
+    width: 100%;                /* ocupan todo el ancho disponible hasta el máximo */
+}
