@@ -47,11 +47,16 @@ h1,h2,h3 {
 }
 
 .logoTexto {
-    font-size: 2rem; 
+    font-size: 1.8rem; 
     font-weight: 800;
     color: rgb(255, 255, 255);
+    font-family: 'Times New Roman', Times, serif;
 }
 
+.logoTexto:hover {
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.137);
+}
 /* boton del menu anvurgeza */
 .btnMenu {
     display: none; 
@@ -93,7 +98,7 @@ h1,h2,h3 {
     }
     .listaMenu { /* el menu lo desplegamos */
         position: absolute;
-        top: 90px;
+        top: 100px;
         left: 0;
         width: 100%;
         background: rgba(241, 232, 232, 0.904);
@@ -174,6 +179,11 @@ h1,h2,h3 {
     overflow: hidden; /* recortamos cont */
 }
 
+.destacadaCard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.493);
+}
+
 .destacadaImg {
     height: 400px;
     background-size: cover;
@@ -212,7 +222,7 @@ h1,h2,h3 {
 
 .cardMini:hover { 
     transform: translateY(-2px); /* sube un pelin al hover */
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.404);
 }
 
 .miniImg {
@@ -260,6 +270,11 @@ h1,h2,h3 {
     display: flex;
     gap: 16px;
     align-items: flex-start;
+}
+
+.cardNoticia:hover { 
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.404);
 }
 
 /* imagen de la not */
@@ -335,7 +350,7 @@ h1,h2,h3 {
 }
 
 .tema:hover { 
-    background: #b80808; 
+    background: #d11111; 
 }
 
 .tarjetaNewsletter input {
@@ -358,6 +373,7 @@ h1,h2,h3 {
 }
 .tarjetaNewsletter button:hover { 
     background: #b80808;
+    
 }
 
 .tarjetaNewsletter small { 
@@ -525,18 +541,17 @@ h1,h2,h3 {
     }
 }
 
-/* =========================
-   Centrado real de noticias en paginas > 1
-   ========================= */
+/*
+   Centrado de noticias en paginas > 1 */
 .listaNoticias.centrada {
     grid-column: 1 / -1;        /* ocupa todo el ancho del grid para que pueda centrarse */
     display: flex;
     flex-direction: column;
-    align-items: center;        /* centramos horizontalmente */
+    align-items: center; 
     justify-content: flex-start;
 }
 
 .listaNoticias.centrada .cardNoticia {
-    max-width: 800px;           /* ancho máximo para que no se estiren demasiado */
-    width: 100%;                /* ocupan todo el ancho disponible hasta el máximo */
+    max-width: 800px;           
+    width: 100%;               
 }
