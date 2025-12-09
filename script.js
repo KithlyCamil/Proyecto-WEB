@@ -19,7 +19,7 @@ if (btnSuscribir && emailInput) {
 }
 
 //direccion del feed rss y proxy para evitar problemas de cors al leerlo desde el navegador
-const FEED = "http://feeds.bbci.co.uk/mundo/rss.xml";
+const FEED = "https://feeds.bbci.co.uk/mundo/rss.xml";
 const PROXY = "https://api.allorigins.win/get?url=" + encodeURIComponent(FEED);
 
 const cont = document.getElementById("contenedor-noticias");
