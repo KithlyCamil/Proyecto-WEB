@@ -226,16 +226,18 @@ function renderPagina() { //segun la cat y la pag
 
   lista.innerHTML = listaHtml; //inyectamos el HTML construido dentro de la lista
 
-  //clicks para modal
-  lista.querySelectorAll("[data-index]").forEach(card => { //selecciona las cards que tienen data-index
-    card.addEventListener("click", () => {
-      const idx = Number(card.getAttribute("data-index"));
-      abrirModalNoticiaByIndex(idx); //abre el modal con la noticia
-    });
-  });
-
   actualizarPaginador(totalPages); //actualiza estado de los botones y del paginador
   setAsideVisibility();
+}
+
+//cualquier elemento con dataindex dentro del cont abre el modal
+if (cont) {
+  cont.addEventListener("click", (e) => {
+    const card = e.target.closest("[data-index]"); //busca el contenedor clickeado
+    if (!card) return;
+    const idx = Number(card.getAttribute("data-index"));
+    if (Number.isFinite(idx)) abrirModalNoticiaByIndex(idx); //abre modal si el índice es válido
+  });
 }
 
 function actualizarPaginador(totalPages) {
@@ -247,7 +249,7 @@ function actualizarPaginador(totalPages) {
 }
 
 // Navegacion
-if (btnPrev) { // Si existe "anterior"
+if (btnPrev) { // Si existe ant
   btnPrev.addEventListener("click", () => {
     paginaActual = Math.max(1, paginaActual - 1); //decrementa pagina
     renderPagina(); //vuelve a renderizar
@@ -255,11 +257,11 @@ if (btnPrev) { // Si existe "anterior"
     setAsideVisibility();
   });
 }
-if (btnNext) { // Si existe "siguiente"
+if (btnNext) { // Si existe sig
   btnNext.addEventListener("click", () => { 
-    paginaActual = paginaActual + 1; // Incrementa página
-    renderPagina(); // Vuelve a renderizar
-    scrollALista(); //desplaza la vista hacia la lista
+    paginaActual = paginaActual + 1; //Incrementa pag
+    renderPagina();
+    scrollALista();
     setAsideVisibility();
   });
 }
